@@ -18,21 +18,21 @@ const Carrinho = () => {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
+      <div className="min-h-screen bg-background">
         <Header />
         
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
-            <div className="bg-white rounded-lg shadow-lg p-12 max-w-md mx-auto">
-              <ShoppingCart className="h-16 w-16 text-gray-400 mx-auto mb-6" />
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            <div className="bg-card rounded-lg shadow-sm p-12 max-w-md mx-auto">
+              <ShoppingCart className="h-16 w-16 text-muted-foreground mx-auto mb-6" />
+              <h2 className="text-2xl font-bold text-foreground mb-4">
                 Seu carrinho está vazio
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Que tal adicionar alguns produtos frescos do nosso mercadinho?
               </p>
               <Link to="/produtos">
-                <Button className="bg-orange-500 hover:bg-orange-600">
+                <Button className="bg-primary hover:bg-primary/90">
                   Ver Produtos
                 </Button>
               </Link>
@@ -46,7 +46,7 @@ const Carrinho = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
@@ -59,8 +59,8 @@ const Carrinho = () => {
             </Button>
           </Link>
           <div>
-            <h1 className="text-3xl font-bold text-gray-800">Meu Carrinho</h1>
-            <p className="text-gray-600">{items.length} {items.length === 1 ? 'item' : 'itens'} no carrinho</p>
+            <h1 className="text-3xl font-bold text-foreground">Meu Carrinho</h1>
+            <p className="text-muted-foreground">{items.length} {items.length === 1 ? 'item' : 'itens'} no carrinho</p>
           </div>
         </div>
 
@@ -74,7 +74,7 @@ const Carrinho = () => {
                   variant="outline" 
                   size="sm" 
                   onClick={clearCart}
-                  className="text-red-600 hover:text-red-700 hover:bg-red-50"
+                  className="text-destructive hover:text-destructive hover:bg-destructive/10"
                 >
                   <Trash2 className="h-4 w-4 mr-2" />
                   Limpar Carrinho
@@ -90,11 +90,11 @@ const Carrinho = () => {
                     />
                     
                     <div className="flex-1">
-                      <h3 className="font-semibold text-gray-800">{item.name}</h3>
+                      <h3 className="font-semibold text-foreground">{item.name}</h3>
                       <Badge variant="secondary" className="text-xs mt-1">
                         {item.category}
                       </Badge>
-                      <p className="text-orange-600 font-bold mt-1">
+                      <p className="text-primary font-bold mt-1">
                         R$ {item.price.toFixed(2)}
                       </p>
                     </div>
@@ -127,14 +127,14 @@ const Carrinho = () => {
                     </div>
 
                     <div className="text-right">
-                      <p className="font-bold text-gray-800">
+                      <p className="font-bold text-foreground">
                         R$ {(item.price * item.quantity).toFixed(2)}
                       </p>
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => removeItem(item.id)}
-                        className="text-red-600 hover:text-red-700 hover:bg-red-50 mt-1"
+                        className="text-destructive hover:text-destructive hover:bg-destructive/10 mt-1"
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>
@@ -160,13 +160,13 @@ const Carrinho = () => {
                   
                   <div className="flex justify-between text-sm">
                     <span>Taxa de entrega</span>
-                    <span className={deliveryFee === 0 ? "text-green-600" : ""}>
+                    <span className={deliveryFee === 0 ? "text-primary" : ""}>
                       {deliveryFee === 0 ? "GRÁTIS" : `R$ ${deliveryFee.toFixed(2)}`}
                     </span>
                   </div>
                   
                   {totalPrice < 50 && (
-                    <p className="text-xs text-gray-600 bg-yellow-50 p-2 rounded">
+                    <p className="text-xs text-muted-foreground bg-accent p-2 rounded">
                       Faltam R$ {(50 - totalPrice).toFixed(2)} para frete grátis!
                     </p>
                   )}
@@ -176,11 +176,11 @@ const Carrinho = () => {
 
                 <div className="flex justify-between font-bold text-lg">
                   <span>Total</span>
-                  <span className="text-orange-600">R$ {finalTotal.toFixed(2)}</span>
+                  <span className="text-primary">R$ {finalTotal.toFixed(2)}</span>
                 </div>
 
                 <Link to="/checkout" className="block">
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3">
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3">
                     Finalizar Compra
                   </Button>
                 </Link>
@@ -194,9 +194,9 @@ const Carrinho = () => {
                 </div>
 
                 {/* Delivery Info */}
-                <div className="bg-green-50 p-4 rounded-lg text-sm">
-                  <h4 className="font-semibold text-green-800 mb-2">Entrega Rápida</h4>
-                  <p className="text-green-700">
+                <div className="bg-accent p-4 rounded-lg text-sm">
+                  <h4 className="font-semibold text-accent-foreground mb-2">Entrega Rápida</h4>
+                  <p className="text-accent-foreground">
                     Receba seus produtos em até 30 minutos na Vila Esperança e bairros vizinhos.
                   </p>
                 </div>
