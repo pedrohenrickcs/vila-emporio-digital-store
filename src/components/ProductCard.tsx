@@ -45,7 +45,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     : product.price;
 
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-200">
+    <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105">
       <CardHeader className="p-0">
         <div className="relative">
           <img 
@@ -54,13 +54,13 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             className="w-full h-48 object-cover rounded-t-lg"
           />
           {product.discount && (
-            <Badge className="absolute top-2 left-2 bg-red-500 text-white">
+            <Badge className="absolute top-2 left-2 bg-destructive text-destructive-foreground">
               -{product.discount}%
             </Badge>
           )}
           {product.inStock === false && (
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-t-lg">
-              <span className="text-white font-semibold">Fora de Estoque</span>
+            <div className="absolute inset-0 bg-foreground/50 flex items-center justify-center rounded-t-lg">
+              <span className="text-background font-semibold">Fora de Estoque</span>
             </div>
           )}
         </div>
@@ -73,7 +73,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           </Badge>
         </div>
         
-        <h3 className="font-semibold text-gray-800 mb-2 line-clamp-2">
+        <h3 className="font-semibold text-card-foreground mb-2 line-clamp-2">
           {product.name}
         </h3>
         
@@ -86,12 +86,12 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                   className={`h-4 w-4 ${
                     i < product.rating! 
                       ? 'text-yellow-400 fill-current' 
-                      : 'text-gray-300'
+                      : 'text-muted-foreground'
                   }`} 
                 />
               ))}
             </div>
-            <span className="text-sm text-gray-600 ml-1">({product.rating})</span>
+            <span className="text-sm text-muted-foreground ml-1">({product.rating})</span>
           </div>
         )}
         
@@ -99,15 +99,15 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           <div className="flex items-center gap-2">
             {product.discount ? (
               <>
-                <span className="text-gray-500 line-through text-sm">
+                <span className="text-muted-foreground line-through text-sm">
                   R$ {product.price.toFixed(2)}
                 </span>
-                <span className="text-xl font-bold text-orange-600">
+                <span className="text-xl font-bold text-primary">
                   R$ {discountedPrice.toFixed(2)}
                 </span>
               </>
             ) : (
-              <span className="text-xl font-bold text-orange-600">
+              <span className="text-xl font-bold text-primary">
                 R$ {product.price.toFixed(2)}
               </span>
             )}
@@ -117,7 +117,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <Button 
           onClick={handleAddToCart}
           disabled={product.inStock === false}
-          className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300"
+          className="w-full"
         >
           <ShoppingCart className="h-4 w-4 mr-2" />
           {product.inStock === false ? 'Indisponível' : 'Adicionar'}

@@ -138,20 +138,20 @@ const Produtos = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Nossos Produtos</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-foreground mb-4">Nossos Produtos</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Encontre tudo o que você precisa para sua casa com a qualidade e carinho de sempre
           </p>
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div className="bg-card rounded-lg shadow-sm p-6 mb-8">
           <div className="flex flex-col md:flex-row gap-4 items-center">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
@@ -160,9 +160,9 @@ const Produtos = () => {
                 placeholder="Buscar produtos..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pr-10 border-orange-200 focus:border-orange-400"
+                className="pr-10"
               />
-              <Search className="absolute right-3 top-3 h-4 w-4 text-gray-400" />
+              <Search className="absolute right-3 top-3 h-4 w-4 text-muted-foreground" />
             </div>
 
             {/* Category Filter */}
@@ -173,8 +173,8 @@ const Produtos = () => {
                   variant={selectedCategory === category ? "default" : "secondary"}
                   className={`cursor-pointer px-3 py-2 ${
                     selectedCategory === category
-                      ? "bg-orange-500 hover:bg-orange-600"
-                      : "hover:bg-gray-200"
+                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                      : "hover:bg-secondary/80"
                   }`}
                   onClick={() => setSelectedCategory(category)}
                 >
@@ -194,14 +194,14 @@ const Produtos = () => {
           </div>
         ) : (
           <div className="text-center py-12">
-            <div className="bg-white rounded-lg shadow-md p-8 max-w-md mx-auto">
-              <div className="text-gray-400 mb-4">
+            <div className="bg-card rounded-lg shadow-sm p-8 max-w-md mx-auto">
+              <div className="text-muted-foreground mb-4">
                 <Filter className="h-12 w-12 mx-auto" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
                 Nenhum produto encontrado
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Tente ajustar sua busca ou escolher uma categoria diferente
               </p>
               <Button 
@@ -209,7 +209,6 @@ const Produtos = () => {
                   setSelectedCategory("Todos");
                   setSearchQuery("");
                 }}
-                className="bg-orange-500 hover:bg-orange-600"
               >
                 Limpar Filtros
               </Button>
@@ -219,7 +218,7 @@ const Produtos = () => {
 
         {/* Products Count */}
         <div className="text-center mt-8">
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Exibindo {filteredProducts.length} de {products.length} produtos
           </p>
         </div>

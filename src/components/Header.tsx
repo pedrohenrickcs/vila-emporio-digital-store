@@ -30,9 +30,9 @@ export const Header = () => {
   ];
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-card shadow-sm sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white text-sm py-2">
+      <div className="bg-primary text-primary-foreground text-sm py-2">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-6">
@@ -59,12 +59,12 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white p-3 rounded-full">
+            <div className="bg-primary text-primary-foreground p-3 rounded-lg">
               <span className="text-xl font-bold">EV</span>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-800">Empório da Vila</h1>
-              <p className="text-sm text-gray-600 hidden sm:block">Seu mercadinho de bairro</p>
+              <h1 className="text-2xl font-bold text-foreground">Empório da Vila</h1>
+              <p className="text-sm text-muted-foreground hidden sm:block">Seu mercadinho de bairro</p>
             </div>
           </Link>
 
@@ -76,11 +76,11 @@ export const Header = () => {
                 placeholder="Buscar produtos..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pr-10 border-orange-200 focus:border-orange-400"
+                className="pr-10"
               />
               <Button 
                 size="sm" 
-                className="absolute right-1 top-1 bg-orange-500 hover:bg-orange-600"
+                className="absolute right-1 top-1 bg-primary hover:bg-primary/90"
               >
                 <Search className="h-4 w-4" />
               </Button>
@@ -91,10 +91,10 @@ export const Header = () => {
           <div className="flex items-center space-x-4">
             {/* Cart */}
             <Link to="/carrinho">
-              <Button variant="outline" className="relative border-orange-200 text-orange-600 hover:bg-orange-50">
+              <Button variant="outline" className="relative">
                 <ShoppingCart className="h-5 w-5" />
                 {itemCount > 0 && (
-                  <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full min-w-[20px] h-5 flex items-center justify-center">
+                  <Badge className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground text-xs px-1.5 py-0.5 rounded-full min-w-[20px] h-5 flex items-center justify-center">
                     {itemCount}
                   </Badge>
                 )}
@@ -122,11 +122,11 @@ export const Header = () => {
               placeholder="Buscar produtos..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pr-10 border-orange-200 focus:border-orange-400"
+              className="pr-10"
             />
             <Button 
               size="sm" 
-              className="absolute right-1 top-1 bg-orange-500 hover:bg-orange-600"
+              className="absolute right-1 top-1 bg-primary hover:bg-primary/90"
             >
               <Search className="h-4 w-4" />
             </Button>
@@ -135,7 +135,7 @@ export const Header = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="border-t border-gray-200">
+      <nav className="border-t">
         <div className="container mx-auto px-4">
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 py-3">
@@ -143,7 +143,7 @@ export const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-gray-700 hover:text-orange-600 font-medium transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-orange-400"
+                className="text-foreground hover:text-primary font-medium transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-primary"
               >
                 {item.name}
               </Link>
@@ -157,7 +157,7 @@ export const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block text-gray-700 hover:text-orange-600 font-medium py-2 px-4 rounded-lg hover:bg-orange-50 transition-colors duration-200"
+                  className="block text-foreground hover:text-primary font-medium py-2 px-4 rounded-lg hover:bg-accent transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
