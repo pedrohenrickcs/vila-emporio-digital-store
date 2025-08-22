@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
+# Empório da Vila 🛒
 
-## Project info
+Este é o protótipo de uma loja online para um mercadinho de bairro chamado **Empório da Vila**, criado utilizando **React** com **Vite**, **Tailwind CSS** e **ShadCN**.
 
-**URL**: https://lovable.dev/projects/27d0e773-65d1-45a0-aa5a-317ad867036f
+## 🎯 Objetivo
+O projeto foi desenvolvido para transmitir uma sensação de tranquilidade e proximidade com o cliente, com um visual limpo, acolhedor e um toque industrial moderno. Ele serve como base para evoluir para uma loja funcional com carrinho, checkout e listagem de produtos.
 
-## How can I edit this code?
+## 🧠 Como o Prompt foi Criado
+O prompt original foi elaborado para gerar um projeto React com:
+- **Paleta de cores**: tons suaves de laranja, amarelo, marrom claro, verde, azul e branco
+- **Estilo visual**: aconchegante, leve, com inspiração industrial
+- **Componentização**: Navbar, ProductCard, Toaster
+- **Páginas iniciais**: Home com produtos em destaque
+- **Mock de dados**: `data/products.ts` para simular produtos reais
+- **Organização de pastas**: `app/`, `components/`, `data/`, `lib/`, `styles/`
 
-There are several ways of editing your application.
+### Prompt utilizado
+```txt
+Crie um projeto web com React e Vite para uma loja online de um mercadinho de bairro chamado "Empório da Vila". A loja deve transmitir uma sensação de tranquilidade e proximidade com o cliente, com um visual limpo, acolhedor e um toque industrial moderno.
 
-**Use Lovable**
+Use Tailwind CSS para o design e ShadCN para os componentes. O layout deve ser responsivo e otimizado para mobile.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/27d0e773-65d1-45a0-aa5a-317ad867036f) and start prompting.
+🔹 Paleta de cores: tons suaves de laranja, amarelo, marrom claro, verde, azul e branco
+🔹 Estilo visual: aconchegante, com leve inspiração industrial (tipografia com presença, ícones delicados, cantos arredondados, sombra suave)
+🔹 Tipografia clara, com boa hierarquia visual e leitura fluida
 
-Changes made via Lovable will be committed automatically to this repo.
+Funcionalidades principais:
+1. Página inicial com banner e produtos em destaque
+2. Página de produtos filtrável por categoria
+3. Carrinho de compras
+4. Página de checkout simples
+5. Página “Sobre”
+6. Página de contato com formulário
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+Extras:
+- Estrutura modular de componentes
+- Boas práticas para SEO e performance
+- Nome do projeto: emporio-da-vila
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Tecnologias Utilizadas
+- **React** com **Vite**
+- **Tailwind CSS** para o estilo
+- **ShadCN/UI** para componentes
+- **TypeScript** para tipagem
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📂 Estrutura de Pastas
+```
+app/
+  layout.tsx
+  page.tsx
+components/
+  ui/
+    Navbar.tsx
+    ProductCard.tsx
+data/
+  products.ts
+lib/
+  utils.ts
+types/
+  index.ts
+styles/
+  globals.css
+```
 
-**Use GitHub Codespaces**
+## 📌 Como Rodar
+```bash
+# Instalar dependências
+npm install
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Rodar em modo de desenvolvimento
+npm run dev
 
-## What technologies are used for this project?
+# Acessar no navegador
+http://localhost:5173
+```
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/27d0e773-65d1-45a0-aa5a-317ad867036f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📜 Licença
+Este projeto é livre para uso e modificação.
