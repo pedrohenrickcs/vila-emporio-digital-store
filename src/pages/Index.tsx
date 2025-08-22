@@ -1,12 +1,11 @@
-
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Star, Truck, MapPin, Clock, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { ProductCard } from "@/components/ProductCard";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Clock, MapPin, Phone, ShoppingCart, Star, Truck } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const categories = [
@@ -15,44 +14,59 @@ const Index = () => {
     { name: "Padaria", icon: "🍞", color: "bg-yellow-100 text-yellow-800" },
     { name: "Laticínios", icon: "🥛", color: "bg-orange-100 text-orange-800" },
     { name: "Carnes", icon: "🥩", color: "bg-red-100 text-red-800" },
-    { name: "Limpeza", icon: "🧽", color: "bg-purple-100 text-purple-800" }
+    { name: "Limpeza", icon: "🧽", color: "bg-purple-100 text-purple-800" },
   ];
 
   const featuredProducts = [
     {
       id: 1,
       name: "Tomate Orgânico",
-      price: 8.90,
+      price: 8.9,
       image: "/placeholder.svg",
       category: "Hortifruti",
-      discount: 15
+      discount: 15,
     },
     {
       id: 2,
       name: "Pão Francês",
-      price: 0.50,
+      price: 0.5,
       image: "/placeholder.svg",
-      category: "Padaria"
+      category: "Padaria",
     },
     {
       id: 3,
       name: "Leite Integral 1L",
-      price: 5.20,
+      price: 5.2,
       image: "/placeholder.svg",
-      category: "Laticínios"
-    }
+      category: "Laticínios",
+    },
   ];
 
   const offers = [
-    { product: "Banana Prata", originalPrice: 4.50, salePrice: 3.90, discount: 13 },
-    { product: "Refrigerante 2L", originalPrice: 8.90, salePrice: 6.90, discount: 22 },
-    { product: "Açúcar Cristal 1kg", originalPrice: 4.20, salePrice: 3.50, discount: 17 }
+    {
+      product: "Banana Prata",
+      originalPrice: 4.5,
+      salePrice: 3.9,
+      discount: 13,
+    },
+    {
+      product: "Refrigerante 2L",
+      originalPrice: 8.9,
+      salePrice: 6.9,
+      discount: 22,
+    },
+    {
+      product: "Açúcar Cristal 1kg",
+      originalPrice: 4.2,
+      salePrice: 3.5,
+      discount: 17,
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-300 text-white py-20">
         <div className="container mx-auto px-4 text-center">
@@ -63,11 +77,14 @@ const Index = () => {
             Seu mercadinho de bairro, com carinho e qualidade
           </p>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Produtos frescos, preços justos e atendimento acolhedor. 
-            Aqui você encontra tudo o que precisa para sua casa.
+            Produtos frescos, preços justos e atendimento acolhedor. Aqui você
+            encontra tudo o que precisa para sua casa.
           </p>
           <Link to="/produtos">
-            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-50 font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
+            <Button
+              size="lg"
+              className="bg-white text-orange-600 hover:bg-gray-50 font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+            >
               <ShoppingCart className="mr-2 h-5 w-5" />
               Ver Produtos
             </Button>
@@ -83,22 +100,34 @@ const Index = () => {
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Truck className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Entrega Rápida</h3>
-              <p className="text-gray-600">Delivery no seu bairro em até 30 minutos</p>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                Entrega Rápida
+              </h3>
+              <p className="text-gray-600">
+                Delivery no seu bairro em até 30 minutos
+              </p>
             </div>
             <div className="text-center">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Star className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Qualidade Garantida</h3>
-              <p className="text-gray-600">Produtos frescos selecionados diariamente</p>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                Qualidade Garantida
+              </h3>
+              <p className="text-gray-600">
+                Produtos frescos selecionados diariamente
+              </p>
             </div>
             <div className="text-center">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="h-8 w-8 text-orange-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Pertinho de Você</h3>
-              <p className="text-gray-600">No coração do seu bairro há mais de 15 anos</p>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                Pertinho de Você
+              </h3>
+              <p className="text-gray-600">
+                No coração do seu bairro há mais de 15 anos
+              </p>
             </div>
           </div>
         </div>
@@ -112,7 +141,10 @@ const Index = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {offers.map((offer, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-2 border-orange-200">
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow duration-300 border-2 border-orange-200"
+              >
                 <CardHeader className="text-center">
                   <Badge className="bg-red-500 text-white w-fit mx-auto mb-2">
                     -{offer.discount}%
@@ -174,7 +206,11 @@ const Index = () => {
           </div>
           <div className="text-center mt-10">
             <Link to="/produtos">
-              <Button variant="outline" size="lg" className="border-orange-300 text-orange-600 hover:bg-orange-50">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-orange-300 text-orange-600 hover:bg-orange-50"
+              >
                 Ver Todos os Produtos
               </Button>
             </Link>
@@ -183,7 +219,7 @@ const Index = () => {
       </section>
 
       {/* Store Info */}
-      <section className="py-16 bg-gradient-to-r from-green-100 to-blue-100">
+      <section className="py-16 bg-[#f8eedc]">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -191,14 +227,17 @@ const Index = () => {
                 Empório da Vila
               </h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Há mais de 15 anos servindo nossa comunidade com produtos frescos, 
-                preços justos e um atendimento que faz você se sentir em casa. 
-                Somos mais que um mercadinho - somos parte da sua família.
+                Há mais de 15 anos servindo nossa comunidade com produtos
+                frescos, preços justos e um atendimento que faz você se sentir
+                em casa. Somos mais que um mercadinho - somos parte da sua
+                família.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center">
                   <Clock className="h-5 w-5 text-blue-600 mr-3" />
-                  <span className="text-gray-700">Segunda a Sábado: 7h às 22h | Domingo: 8h às 20h</span>
+                  <span className="text-gray-700">
+                    Segunda a Sábado: 7h às 22h | Domingo: 8h às 20h
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 text-green-600 mr-3" />
@@ -206,12 +245,17 @@ const Index = () => {
                 </div>
                 <div className="flex items-center">
                   <MapPin className="h-5 w-5 text-orange-600 mr-3" />
-                  <span className="text-gray-700">Rua das Flores, 123 - Vila Esperança</span>
+                  <span className="text-gray-700">
+                    Rua das Flores, 123 - Vila Esperança
+                  </span>
                 </div>
               </div>
               <div className="mt-6">
                 <Link to="/sobre">
-                  <Button variant="outline" className="mr-4 border-green-300 text-green-700 hover:bg-green-50">
+                  <Button
+                    variant="outline"
+                    className="mr-4 border-green-300 text-green-700 hover:bg-green-50"
+                  >
                     Nossa História
                   </Button>
                 </Link>
@@ -223,7 +267,9 @@ const Index = () => {
               </div>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Área de Entrega</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                Área de Entrega
+              </h3>
               <div className="bg-gray-200 h-48 rounded-lg flex items-center justify-center">
                 <p className="text-gray-600">Mapa da região</p>
               </div>

@@ -1,19 +1,18 @@
-
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useCart } from "@/contexts/CartContext";
+import {
+  Clock,
+  MapPin,
+  Menu,
+  Phone,
+  Search,
+  ShoppingCart,
+  X,
+} from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { 
-  ShoppingCart, 
-  Search, 
-  Menu, 
-  X, 
-  Phone,
-  MapPin,
-  Clock
-} from "lucide-react";
-import { useCart } from "@/contexts/CartContext";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +25,7 @@ export const Header = () => {
     { name: "Início", href: "/" },
     { name: "Produtos", href: "/produtos" },
     { name: "Sobre", href: "/sobre" },
-    { name: "Contato", href: "/contato" }
+    { name: "Contato", href: "/contato" },
   ];
 
   return (
@@ -47,7 +46,9 @@ export const Header = () => {
             </div>
             <div className="flex items-center">
               <MapPin className="h-4 w-4 mr-1" />
-              <span className="hidden sm:inline">Rua das Flores, 123 - Vila Esperança</span>
+              <span className="hidden sm:inline">
+                Rua das Flores, 123 - Vila Esperança
+              </span>
               <span className="sm:hidden">Vila Esperança</span>
             </div>
           </div>
@@ -55,16 +56,22 @@ export const Header = () => {
       </div>
 
       {/* Main Header */}
-      <div className="container mx-auto px-4 py-4">
+      <div className="bg-[#f9f1dd] px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="bg-primary text-primary-foreground p-3 rounded-lg">
-              <span className="text-xl font-bold">EV</span>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="text-primary-foreground rounded-lg h-20 w-auto object-cover"
+            />
             <div>
-              <h1 className="text-2xl font-bold text-foreground">Empório da Vila</h1>
-              <p className="text-sm text-muted-foreground hidden sm:block">Seu mercadinho de bairro</p>
+              <h1 className="text-2xl font-bold text-foreground">
+                Empório da Vila
+              </h1>
+              <p className="text-sm text-muted-foreground hidden sm:block">
+                Seu mercadinho de bairro
+              </p>
             </div>
           </Link>
 
@@ -78,8 +85,8 @@ export const Header = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pr-10"
               />
-              <Button 
-                size="sm" 
+              <Button
+                size="sm"
                 className="absolute right-1 top-1 bg-primary hover:bg-primary/90"
               >
                 <Search className="h-4 w-4" />
@@ -109,7 +116,11 @@ export const Header = () => {
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -124,8 +135,8 @@ export const Header = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pr-10"
             />
-            <Button 
-              size="sm" 
+            <Button
+              size="sm"
               className="absolute right-1 top-1 bg-primary hover:bg-primary/90"
             >
               <Search className="h-4 w-4" />
